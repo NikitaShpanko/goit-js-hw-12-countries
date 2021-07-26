@@ -14,4 +14,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var e=s(require("./js/fetchCountries.js")),r=s(require("lodash.debounce")),t=s(require("./templates/country.hbs"));function s(e){return e&&e.__esModule?e:{default:e}}const u=document.querySelector("body");(0,e.default)("ukraine").then(e=>{u.insertAdjacentHTML("beforeend",(0,t.default)(e[0]))});
 },{"./sass/main.scss":"clu1","./js/fetchCountries.js":"irxn","lodash.debounce":"PZFh","./templates/country.hbs":"xAbl"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-12-countries/src.7d81461d.js.map
+//# sourceMappingURL=/goit-js-hw-12-countries/src.a85ec72a.js.map
