@@ -1,4 +1,21 @@
-// .wrapper {
-//   width: 600px;
-//   margin: 0 auto;
-// }
+body {
+  background-color: #eeeeee;
+}
+
+.wrapper {
+  width: 100%;
+  @media screen and (min-width: $max-card-width) {
+    width: $max-card-width;
+  }
+  margin: 0 auto;
+}
+
+#search {
+  margin-top: 15px;
+  width: 100%;
+  font-size: $font-size;
+}
+
+#result {
+  font-size: $font-size;
+}
