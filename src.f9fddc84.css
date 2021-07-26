@@ -1,2 +1,0 @@
-.country{width:100%;margin:0 auto;font-size:24px}@media screen and (min-width:640px){.country{width:640px}}.country-name{text-align:center}.country-info{margin:auto;display:flex;justify-content:space-between}@media screen and (max-width:600px){.country-info{flex-direction:column-reverse;align-items:center}}.field-name{font-weight:700}.flag{width:100%}@media screen and (min-width:288px){.flag{width:288px}}
-/*# sourceMappingURL=/goit-js-hw-12-countries/src.f9fddc84.css.map */
