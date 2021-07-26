@@ -8,7 +8,7 @@ import showCountry from './templates/country.hbs';
 import showCountryList from './templates/countryList.hbs';
 
 const MAX_COUNTRIES = 10;
-const RETURN_LINK = '<p><a href="" data-index=-1>Return to the list</a></p>';
+const RETURN_LINK = '<p class="return"><a href="" data-index=-1>Return to the list</a></p>';
 // const FULL_TEXT = '?fullText=true';
 
 const html = new DocIDs('search', 'result');
@@ -36,7 +36,7 @@ function showCountries(text) {
       html.result.innerHTML = showCountryList(res);
     }
     curRes = res;
-  });
+  })
 }
 
 html.result.addEventListener('click', e => {
