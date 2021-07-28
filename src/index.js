@@ -1,17 +1,23 @@
+import debounce from 'lodash.debounce';
+import { error } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+
 import './sass/main.scss';
 
 import DocIDs from './js/DocIDs';
 import fetchCountries from './js/fetchCountries.js';
-import debounce from 'lodash.debounce';
+import pnotifySetup from './js/pnotifySetup';
 
 import showCountry from './templates/country.hbs';
 import showCountryList from './templates/countryList.hbs';
 
 const MAX_COUNTRIES = 10;
 const RETURN_LINK = '<p class="return"><a href="" data-index=-1>Return to the list</a></p>';
-// const FULL_TEXT = '?fullText=true';
 
 const html = new DocIDs('search', 'result');
+pnotifySetup(html.result);
+
 let curRes = [];
 html.search.addEventListener(
   'input',
@@ -29,14 +35,16 @@ function showCountries(text) {
     if (res.length === 1) {
       html.result.innerHTML = showCountry(res[0]);
     } else if (res.length === 0) {
-      html.result.innerHTML = '<p>Not found!</p>';
+      error(`"${text}" not found.`);
     } else if (res.length > MAX_COUNTRIES) {
-      html.result.innerHTML = '<p>Too much!</p>';
+      error(
+        `${res.length} countries were found, which is too much to show. Please enter more letters.`,
+      );
     } else {
       html.result.innerHTML = showCountryList(res);
     }
     curRes = res;
-  })
+  });
 }
 
 html.result.addEventListener('click', e => {

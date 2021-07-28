@@ -2,8 +2,12 @@ body {
   background-color: #eeeeee;
 }
 
+li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .wrapper {
-  width: 100%;
+  width: calc(100% - 16px);
   @media screen and (min-width: $max-card-width) {
     width: $max-card-width;
   }
@@ -17,5 +21,6 @@ body {
 }
 
 #result {
+  position: relative;
   font-size: $font-size;
 }
